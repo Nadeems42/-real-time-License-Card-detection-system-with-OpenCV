@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>License Card Detection</h1>
+        
+        <div class="detection-area">
+            <div class="webcam-preview">
+                <div id="video-container">
+                    <img id="video-feed" src="{{ url_for('video_feed') }}" alt="Live Feed">
+                </div>
+                <div id="upload-section">
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <input type="file" id="file-input" name="file" accept="image/*" capture="camera">
+                        <button type="button" id="upload-btn" class="btn">Upload Image</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="detection-result" class="cropped-preview" style="display: none;">
+                <h3>Detected License Card (<span id="confidence-value">0</span>% confidence)</h3>
+                <img id="cropped-image" src="" alt="Cropped License">
+                <div class="action-buttons">
+                    <button id="proceed-btn" class="btn">Proceed to Extract Details</button>
+                    <button id="recrop-btn" class="btn secondary">Re-crop</button>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

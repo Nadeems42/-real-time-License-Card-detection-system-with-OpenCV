@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Verify License Details</h1>
+        
+        <div class="verification-area">
+            <div class="cropped-license">
+                <img src="{{ url_for('static', filename='uploads/' + cropped_image) }}" alt="License for Verification">
+            </div>
+            
+            <div class="verification-form">
+                <div id="extraction-status">
+                    <p>Extracting license details...</p>
+                    <div class="loading-spinner"></div>
+                </div>
+                
+                <div id="verification-result" style="display: none;">
+                    <h3>Extracted Information</h3>
+                    <form id="verify-form">
+                        <div class="form-group">
+                            <label for="dl-number">DL Number:</label>
+                            <input type="text" id="dl-number" name="dl_number" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="valid-till">Valid Till:</label>
+                            <input type="text" id="valid-till" name="valid_till" readonly>
+                        </div>
+                        <button type="submit" class="btn">Verify Against Database</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

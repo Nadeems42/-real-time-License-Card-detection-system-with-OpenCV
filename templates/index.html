@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Card Verification System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>License Card Verification System</h1>
+            <p>Securely verify license cards with real-time detection and OCR technology</p>
+        </header>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Detect</h3>
+                    <p>Our system uses YOLOv8 to detect license cards in real-time through your webcam</p>
+                </div>
+                <div class="step">
+                    <h3>Extract</h3>
+                    <p>Advanced OCR extracts license information including number, name, and validity</p>
+                </div>
+                <div class="step">
+                    <h3>Verify</h3>
+                    <p>The system checks license validity against our secure database</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="action">
+            <a href="{{ url_for('detect') }}" class="btn">Start Verification</a>
+        </div>
+    </div>
+</body>
+</html>

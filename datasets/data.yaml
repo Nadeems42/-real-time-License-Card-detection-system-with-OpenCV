@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['dl_number', 'license-card', 'name', 'valid_till']
+
+roboflow:
+  workspace: license-card-detection
+  project: licensecarddetection
+  version: 6
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/license-card-detection/licensecarddetection/dataset/6

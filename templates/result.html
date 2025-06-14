@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Verification Result</h1>
+        
+        <div class="result-area">
+            <div id="success-result" class="success" style="display: none;">
+                <h2>✅ Verification Successful</h2>
+                <p>License details match our records and is valid.</p>
+                <div class="license-details">
+                    <p><strong>Name:</strong> <span id="result-name"></span></p>
+                    <p><strong>DL Number:</strong> <span id="result-dl-number"></span></p>
+                    <p><strong>Valid Till:</strong> <span id="result-valid-till"></span></p>
+                </div>
+            </div>
+            
+            <div id="expired-result" class="error" style="display: none;">
+                <h2>❌ License Expired</h2>
+                <p>The license has expired and is no longer valid.</p>
+            </div>
+            
+            <div id="denied-result" class="error" style="display: none;">
+                <h2>❌ Access Denied</h2>
+                <p>License not found in our database.</p>
+                <p>Meet the Admin for verification.</p>
+                <a href="{{ url_for('admin') }}" class="btn">Get Verified</a>
+            </div>
+            
+            <a href="{{ url_for('home') }}" class="btn secondary">Start New Verification</a>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
